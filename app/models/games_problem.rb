@@ -1,0 +1,2 @@
+class GamesProblem < ApplicationRecord
+end
