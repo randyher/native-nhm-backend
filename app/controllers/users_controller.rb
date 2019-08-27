@@ -6,6 +6,10 @@ class UsersController < ApplicationController
   #   render json: @users
   # end
 
+  def profile
+    render json: { user: @user }, status: :accepted
+  end
+
   def create
     @user = User.create(user_params)
     if @user.valid?
