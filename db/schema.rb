@@ -19,17 +19,11 @@ ActiveRecord::Schema.define(version: 2019_08_27_151944) do
     t.integer "score"
     t.integer "time_remaining"
     t.string "game_type"
+    t.string "number_sentences"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "games_problems", force: :cascade do |t|
-    t.bigint "game_id"
-    t.bigint "problem_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_games_problems_on_game_id"
-    t.index ["problem_id"], name: "index_games_problems_on_problem_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "problems", force: :cascade do |t|

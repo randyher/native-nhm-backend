@@ -1,2 +1,3 @@
 class Problem < ApplicationRecord
+
 end
