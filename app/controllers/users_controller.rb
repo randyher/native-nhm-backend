@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   # end
 
   def profile
-    render json: { user: @user }, status: :accepted
+    @user_games = @user.games
+    render json: { user: @user, games: @user_games }, status: :accepted
   end
 
   def create
