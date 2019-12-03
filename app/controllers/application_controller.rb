@@ -6,6 +6,10 @@ class ApplicationController < ActionController::API
     JWT.encode(payload, 'my_s3cr3t')
   end
 
+  def secret 
+    Rails.application.credentials.jwt_secret
+  end 
+
   def auth_header
     # { Authorization: 'Bearer <token>' }
 
