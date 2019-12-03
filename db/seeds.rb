@@ -12,6 +12,7 @@ end
 
 Game.delete_all
 Problem.delete_all
+User.destroy_all
 
 
 User.create(username: "RandyHer", password:"123456", grade: "1st")
