@@ -22,20 +22,9 @@ class GamesController < ApplicationController
     render json: @game
   end
 
-  def update
-    @game.update(game_params)
-    if @game.save
-      @games = Show.all
-      render json: @games, status: :accepted
-    else
-      render json: {errors: @game.errors.full_messages}, status: :unprocessable_entity
-    end
-  end
+ 
 
-  def destroy
-    @game.destroy
-    render json: @game
-  end
+
 
   private
 
