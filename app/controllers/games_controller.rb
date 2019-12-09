@@ -1,7 +1,5 @@
 class GamesController < ApplicationController
 
-  before_action :find_game, only: [:update, :show, :destroy]
-
   def index
     @games = Game.all
     render json: @games
@@ -22,17 +20,10 @@ class GamesController < ApplicationController
     render json: @game
   end
 
- 
-
-
-
   private
 
     def game_params
     params.require(:game).permit(:user_id, :score, :time_remaining, :problems, :game_type, :number_sentences)
     end
 
-    def find_game
-        @game = Game.find(params[:id])
-    end
 end
