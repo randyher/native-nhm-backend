@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :games_problems
-  
   resources :games, only: [:index, :create, :show]
   resources :problems
 
