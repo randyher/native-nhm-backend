@@ -3,4 +3,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: { case_sensitive: false }
 
   has_many :games
+
+
+  
 end
