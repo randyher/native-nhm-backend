@@ -17,7 +17,7 @@ class UsersController < ApplicationController
      return render json: { error: @user.errors.full_messages }, status: :not_acceptable
     end 
     @token = encode_token(user_id: @user.id)
-    render json: { user: @user, jwt: @token }, status: :created
+    render json: { user: @user, jwt: @token, user_games: @user.games }, status: :created
   end
 
   private
